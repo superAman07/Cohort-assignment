@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo with DOM</title>
+</head>
+<body>
+    <input id="title" type="text" placeholder="Title"> <br>
+    <input id="description" type="text" placeholder="Description"><br>
+    <button onclick="ToDo()">Add ToDo</button>
+    <div id="container"></div>
+
+    <script>
+        let GlobalId=0;
+        function markAsDone(todoID){
+            const parent = document.getElementById(todoID);
+            parent.children[2].innerHTML= "Done!";
+        }
+
+        function createChild(title,description,id){
+            const child = document.createElement("div");
+            const firstGrandParent = document.createElement("div");
+            firstGrandParent.innerHTML=title;
+            const secondGrandParent = document.createElement("div");
+            secondGrandParent.innerHTML=description;
+            const thirdGrandParent = document.createElement("button");
+            thirdGrandParent.innerHTML="Mark as done!";
+            thirdGrandParent.setAttribute("onclick",`markAsDone(${id})`);
+            child.append(firstGrandParent);
+            child.append(secondGrandParent);
+            child.append(thirdGrandParent);
+            child.setAttribute("id",id);
+            return child;
+        }
+
+
+        function ToDo(){
+            const title= document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            // const originalHtml= document.getElementById("container").innerHTML;
+            // document.getElementById("container").innerHTML = originalHtml + `
+            // <div>${title}</div>
+            // <div>${description}</div>
+            // <button>Mark as done!</button>
+            // `
+            //instead of this we should use  document.createElement ,document.appendChild, element.setAttribute and element.children for better practice
+            // const childDiv = document.createElement("div");
+            // childDiv.innerHTML = title;
+            // document.getElementById("container").append(childDiv);
+            //instead of this we can do this too
+            const parent = document.getElementById("container");
+            const child = createChild(title,description,GlobalId++)
+            parent.appendChild(child);
+        }
+    </script>
+</body>
+</html>

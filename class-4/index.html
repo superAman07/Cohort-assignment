@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="num1" placeholder="first number"><br>
+    <input type="text" name="" id="num2" placeholder="second number"><br>
+    <button onclick="fun()" >Add</button>
+    <div id="finalSum"></div>
+
+    <script>
+        // function fun(){
+        //     const a = parseFloat(document.getElementById("num1").value);
+        //     const b = parseFloat(document.getElementById("num2").value);
+        //     // element = document.getElementById("finalSum");
+        //     // element.innerHTML  ="Sum is :"+ a+b;
+        //     //Lets make it like server return the output
+        //     fetch("http://localhost:3000/add?a="+a+"&b="+b)
+        //     .then(function(response){
+        //         response.text()
+        //         .then(function(ans){
+        //             document.getElementById("finalSum").innerHTML = ans;
+        //         })
+        //     })
+        // }
+        //instead of doing this we can also use async/await
+        async function fun(){
+            const a = parseFloat(document.getElementById("num1").value);
+            const b = parseFloat(document.getElementById("num2").value);
+            const response = await fetch(`http://localhost:3000/add?a=${a}&b=${b}`);
+            const ans = await response.text();
+            document.getElementById("finalSum").innerHTML=ans;
+            // try {
+            //     const response = await fetch(`http://localhost:3000/add?a=${a}&b=${b}`);
+            //     if (!response.ok) {
+            //         throw new Error('Network response was not ok');
+            //     }
+            //     const ans = await response.text();
+            //     document.getElementById("finalSum").innerHTML = ans;
+            // } catch (error) {
+            //     console.error('There was a problem with the fetch operation:', error);
+            // }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="num1" placeholder="first number"><br>
+    <input type="text" name="" id="num2" placeholder="second number"><br>
+    <!-- <button onclick="populateDiv()" >Add</button> -->
+    <div id="finalSum"></div>
+
+    <script>
+        function debouncePopulateDiv(){
+            const timeout= setTimeout(function(){
+                populateDiv()
+            },100);
+            clearTimeout(timeout);
+        }
+        async function populateDiv(){
+            const a = parseFloat(document.getElementById("num1").value);
+            const b = parseFloat(document.getElementById("num2").value);
+            const response = await fetch(`http://localhost:3000/add?a=${a}&b=${b}`);
+            const ans = await response.text();
+            document.getElementById("finalSum").innerHTML=ans;
+            
+        }
+    </script>
+</body>
+</html>
