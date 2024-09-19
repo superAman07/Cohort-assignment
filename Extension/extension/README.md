@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# My Tiptap Extension
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to **My Tiptap Extension**
 
-## Available Scripts
+This is a custom extension built for the Tiptap editor, designed to enhance the functionality of the editor with additional features. It was built as part of a project where I explored creating custom editor experiences using Tiptap’s flexible framework.
 
-In the project directory, you can run:
+## Why I Created This Extension
 
-### `npm start`
+As I was diving into the world of rich-text editors, I found Tiptap to be an extremely powerful and flexible tool. However, like any developer, I wanted to push the boundaries and create something that could suit specific needs for projects I was working on. That's when I decided to build this extension to complement Tiptap's core features and make the editor even more capable.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Custom Marks and Nodes**: This extension adds new marks and nodes that allow for additional text styling and content manipulation.
+- **Easy Integration**: You can integrate this extension seamlessly into any Tiptap-based project.
+- **Rich Editing Experience**: My extension enhances the editing experience by adding new tools for more dynamic content creation.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You can easily install this extension via npm:
 
-### `npm run build`
+```bash
+npm install my-tiptap-extension
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Then import and use it in your Tiptap editor setup like this:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```javascript
+import MyTiptapExtension from 'my-tiptap-extension';
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+const editor = new Editor({
+  extensions: [
+    MyTiptapExtension,
+    //and other basic expentions
+  ],
+});
+```
 
-### `npm run eject`
+## How to Use
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Simply integrate the extension in your project’s editor configuration, and it will be ready to use. Check out the demo for more details on usage.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+I’m excited to have built this extension and look forward to any feedback or contributions from the community. Feel free to fork this repo, submit pull requests, or report any issues you find. If you’ve got ideas for improvement, I’d love to hear them!
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Support
 
-## Learn More
+If you encounter any problems or have questions, don't hesitate to reach out by submitting an issue or contacting me directly.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Special Thanks
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+I’d like to thank the entire Tiptap team for providing such an excellent foundation to build on. Your flexibility has allowed developers like me to explore and extend what’s possible with rich-text editing!
 
-### Code Splitting
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to modify any part of it, or let me know if you'd like more sections added!
