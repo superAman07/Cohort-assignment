@@ -1,0 +1,17 @@
+.commentHighlight {
+  background-color: yellow;
+  cursor: pointer;
+  position: relative;
+}
+
+.commentHighlight:hover::after {
+  content: attr(data-comment);
+  position: absolute;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  top: 20px;
+  left: 0;
+  z-index: 10;
+}
