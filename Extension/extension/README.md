@@ -56,5 +56,3 @@ I’d like to thank the entire Tiptap team for providing such an excellent found
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ---
-
-Feel free to modify any part of it, or let me know if you'd like more sections added!
