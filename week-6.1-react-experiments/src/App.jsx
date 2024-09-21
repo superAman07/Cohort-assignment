@@ -1,29 +1,32 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
-// import Todo from './components/Todo';
+import UseEffectEx from './components/UseEffectEx';
+import UseMemo from './components/UseMemo';
+import UseCallBack from './components/UseCallback';
+import useHook from './components/CustomHook';
 
 function App() {
-  const [todos,setTodos]=useState([]);
-  useEffect(()=>{
-    fetch('https://jsonplaceholder.typicode.com/todos')
-    .then(async function(res){
-      const json = await res.json();
-      setTodos(json);
-    })
-  },[]);
-
-
+  const [selectedID, setSelectedID] = useState(1);
+  const todos=useHook();
   return (
-    <div className='App'>
-    {todos.map(todo =><Todo key={todo.id} title={todo.title} description={todo.description}/>)}
+    <div>
+      <div>
+        <h1>1: useEffect example</h1>
+        <button onClick={() => setSelectedID(1)}>1</button>
+        <button onClick={() => setSelectedID(2)}>2</button>
+        <button onClick={() => setSelectedID(3)}>3</button>
+        <UseEffectEx id={selectedID} />
+      </div>
+      <div>
+        <UseMemo/>
+      </div>
+      <UseCallBack/>
+      <div>
+        <h1>5: useCustom hook</h1>
+        {todos}
+      </div>
     </div>
-  )
-}
-function Todo({title,description}){
-  return <div>
-    <h1>{title}</h1>
-    <h3>{description}</h3>
-  </div>
+  );
 }
 
 export default App;
