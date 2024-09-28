@@ -14,6 +14,7 @@ function App() {
   )
 }
 function Count({setCount}){
+console.log("re rendiring...")  // this is the problem everytime it will re render
   return (
     <div>
       <CountRenderer/>
