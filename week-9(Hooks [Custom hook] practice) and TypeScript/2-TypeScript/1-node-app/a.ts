@@ -133,6 +133,7 @@
 // function filterUsers(user:User[]){
 //  //simple example...for this array   
 // }
+ 
 
 // Enum
 
@@ -178,3 +179,37 @@
 //         res.status(ResponseStatus.Error).json({})
 //     }
 // })
+
+
+// Generics
+// basically we can avoid making multiple functions...
+
+// function identity<T>(arg:T){
+//     return arg;
+// }
+// let obj1=identity<string>("Hello there");
+// let obj2=identity<number>(3);
+// console.log(obj1.toUpperCase());
+// console.log(obj1);
+// console.log(obj2);
+
+// generics with array
+
+// function firstEle<T>(arr:T[]){
+//     return arr[0];
+// }
+// let ans = firstEle<number>([2,3,4,5]);
+// let ans1 = firstEle([2,3,4,5]);  // both works fine...
+// let ans2 = firstEle([true,false]);  // both works fine...
+// console.log(ans);
+
+//generics with interface
+
+// function firstEle<T>(arr:T[]){
+//     return arr[0];
+// }
+// interface User{
+//     name:string
+// }
+// const ans = firstEle<User>([{name:"Aman"}]);
+// console.log(ans);
