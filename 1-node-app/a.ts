@@ -133,5 +133,49 @@
 // function filterUsers(user:User[]){
 //  //simple example...for this array   
 // }
+ 
 
-// this is the testing...
+// Enum
+
+// enum Direction{
+//     Up,
+//     Down,
+//     Left,
+//     Right
+// }
+// enum Direction{
+//     Up=1,   //if we initialise it as 1 or anyother number the below directions have automatically assigned 2,3,4 
+//     Down,
+//     Left,
+//     Right
+// }
+// enum Direction{
+//     Up="up",    // another way to use enum
+//     Down='down',
+//     Left="left",
+//     Right="right"
+// }
+// function doSomething(keyPressed:Direction){
+//     if(keyPressed==Direction.Up){
+
+//     }
+// }
+// doSomething(Direction.Up)
+// doSomething(Direction.Down)
+// console.log(Direction.Up)
+// console.log(Direction.Down)
+// console.log(Direction.Left)
+// console.log(Direction.Right)
+
+//Common usecase of enum in express
+// const app = require('express');
+// enum ResponseStatus{
+//     Success =200,
+//     NotFound=404,
+//     Error=500
+// }
+// app.get('/',(req,res)=>{
+//     if(!req.query.userId){
+//         res.status(ResponseStatus.Error).json({})
+//     }
+// })
