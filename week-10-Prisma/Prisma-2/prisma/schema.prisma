@@ -1,0 +1,22 @@
+// schema.prisma file mein 3 major components hote hain:
+
+// Datasource - Jisme hum apna database specify karte hain (PostgreSQL, MySQL, etc.).
+// Generator - Jisme Prisma client generate hota hai jo humare code me database se interact karne ke liye use hota hai.
+// Models - Jisme hum apne database tables define karte hain.
+
+datasource db {
+  provider = "postgresql"  // or use another provider if you're using something else (like MySQL or SQLite)
+  url      = env("DB_URL")  // The URL is taken from the .env file
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+}

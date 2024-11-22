@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:13
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: superAman       # Database user
+      POSTGRES_PASSWORD: superaman   # Database password
+      POSTGRES_DB: mydb              # Database name
+    ports:
+      - "5432:5432"                  # Exposing the PostgreSQL port to the host machine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
