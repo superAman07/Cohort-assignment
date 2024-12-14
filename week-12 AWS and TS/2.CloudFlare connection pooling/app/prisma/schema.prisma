@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  // url      = "postgres://avnadmin:AVNS_xDE7QB7VMGJ3qz3Kzxx@pg-235991eb-rivalaman123-ed91.h.aivencloud.com:15328/defaultdb?sslmode=require"                             // ye hai direct connection string to DB but we dont want to...hame isko console.prisma.io me jaa k naya project bana k waha paste karke project start karna hai taaki taaki vo hame ek haya connection pool string(DATABASE_URL) de jo neeche hai...isse data fast access hoga direct getting data from main DB(DIRECT_URL) we can get them easily by pooling...
+  // Basically this project is about     (cloudflare worker)--> (connection pool) --> (DB)
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Log{
+  id      Int     @id    @default(autoincrement())
+  level   String
+  message String
+  meta    Json
+}
